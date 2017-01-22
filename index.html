@@ -39,19 +39,22 @@
         else btn.style.backgroundColor = "transparent";
     }
     function handleMouseOut() {
-        document.getElementById('btn').click();
+        var btn = document.getElementById('btn');
+        if(btn.style.backgroundColor == "#ddd" || btn.style.backgroundColor == "rgb(221, 221, 221)") {
+            btn.click();
+        }
     }
     </script>
 
 </head>
 
-<body id="page-top" ontouchstart="handleMouseOut()">
+<body id="page-top" ontouchend="handleMouseOut()">
 
     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button id="btn" onclick="handleClick()" onblur="handleMouseOut()" style="background-color: transparent" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button id="btn" onclick="handleClick()" style="background-color: transparent" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="#page-top">KK's site</a>
